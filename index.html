@@ -1,0 +1,1763 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>maya board - 视觉创作_官方视频门户|让灵感被看见</title>
+<meta name="description" content="maya board 官方网站，面向视觉创作者与企业团队的高品质视频内容社区，汇聚原创教程、深度测评、创作幕后与品牌故事，持续运营的内容生态平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1f3b'/%3E%3Cpath d='M18 46V20l10 14 4-8 4 8 10-14v26z' fill='%23ffd166'/%3E%3Ccircle cx='48' cy='18' r='5' fill='%23ef476f'/%3E%3C/svg%3E">
+<style>
+:root{
+  --mb-ink:#1b1f3b;
+  --mb-ink-soft:#3a3f63;
+  --mb-ink-mute:#6a6f8f;
+  --mb-amber:#ffb703;
+  --mb-amber-deep:#f08a00;
+  --mb-rose:#ef476f;
+  --mb-cyan:#118ab2;
+  --mb-ivory:#fdf9f1;
+  --mb-ivory-2:#f6eee0;
+  --mb-amber-tint:#fff4dc;
+  --mb-line:rgba(27,31,59,.12);
+  --mb-line-soft:rgba(27,31,59,.07);
+  --mb-shadow:0 12px 34px rgba(27,31,59,.09);
+  --mb-radius:18px;
+  --mb-head-h:64px;
+  --mb-bar-h:42px;
+  --mb-sticky:calc(var(--mb-bar-h) + var(--mb-head-h));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  color:var(--mb-ink);
+  background:var(--mb-ivory);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul,ol{list-style:none}
+.mb-wrap{width:min(1180px,92vw);margin-inline:auto}
+.mb-section{padding:64px 0;scroll-margin-top:calc(var(--mb-sticky) + 12px)}
+.mb-section--tint{background:var(--mb-ivory-2)}
+.mb-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.76rem;letter-spacing:.16em;font-weight:700;
+  color:var(--mb-amber-deep);text-transform:uppercase;
+}
+.mb-eyebrow::before{content:"";width:22px;height:2px;background:var(--mb-amber);border-radius:2px}
+.mb-h2{font-size:clamp(1.55rem,3vw,2.2rem);line-height:1.28;letter-spacing:-.01em;margin:12px 0 10px}
+.mb-lead{color:var(--mb-ink-mute);font-size:1rem;max-width:62ch}
+.mb-h3{font-size:1.12rem;line-height:1.5;letter-spacing:-.005em;margin-bottom:6px}
+.mb-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:.94rem;font-weight:600;
+  transition:transform .18s ease,background .18s ease,box-shadow .18s ease,border-color .18s;
+  border:1.5px solid transparent;
+}
+.mb-btn:hover{transform:translateY(-2px)}
+.mb-btn--solid{background:var(--mb-ink);color:#fff;box-shadow:0 8px 20px rgba(27,31,59,.18)}
+.mb-btn--solid:hover{background:var(--mb-ink-soft)}
+.mb-btn--amber{background:var(--mb-amber);color:var(--mb-ink)}
+.mb-btn--amber:hover{background:var(--mb-amber-deep);color:#fff}
+.mb-btn--ghost{border-color:rgba(27,31,59,.28);color:var(--mb-ink)}
+.mb-btn--ghost:hover{border-color:var(--mb-ink);background:rgba(27,31,59,.04)}
+.mb-btn--sm{padding:7px 15px;font-size:.82rem}
+.mb-tag{
+  display:inline-block;padding:3px 10px;border-radius:999px;font-size:.72rem;
+  font-weight:600;background:var(--mb-amber-tint);color:#a85c00;letter-spacing:.02em;
+}
+.mb-tag--cyan{background:rgba(17,138,178,.12);color:#0b6b8b}
+.mb-tag--rose{background:rgba(239,71,111,.12);color:#c22d52}
+.mb-tag--ink{background:rgba(27,31,59,.08);color:var(--mb-ink-soft)}
+
+/* ---------- 公告条 + 页头 吸顶 ---------- */
+.mb-topbar{
+  position:sticky;top:0;z-index:120;
+  background:linear-gradient(90deg,#1b1f3b,#2d3566 58%,#4a3a6a);
+  color:#fff;font-size:.84rem;
+}
+.mb-topbar__inner{
+  display:flex;align-items:center;gap:14px;
+  min-height:var(--mb-bar-h);padding:6px 0;flex-wrap:wrap;
+}
+.mb-topbar__label{
+  flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+  background:var(--mb-amber);color:#3a2600;font-weight:800;
+  padding:3px 10px;border-radius:6px;font-size:.74rem;letter-spacing:.08em;
+}
+.mb-topbar__track{flex:1 1 320px;overflow:hidden;white-space:nowrap;min-width:0;position:relative;height:22px}
+.mb-topbar__rail{display:inline-flex;gap:36px;padding-left:100%;animation:mb-marquee 26s linear infinite}
+.mb-topbar__rail span{display:inline-flex;align-items:center;gap:8px}
+.mb-topbar__rail b{color:var(--mb-amber);font-weight:700}
+@keyframes mb-marquee{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.mb-topbar__link{
+  flex:0 0 auto;font-size:.78rem;font-weight:700;color:var(--mb-amber);
+  border-bottom:1px dashed rgba(255,183,3,.5);padding-bottom:1px;
+}
+.mb-head{
+  position:sticky;top:var(--mb-bar-h);z-index:110;
+  background:rgba(253,249,241,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--mb-line);
+}
+.mb-head__inner{
+  display:flex;align-items:center;gap:18px;
+  min-height:var(--mb-head-h);
+}
+.mb-logo{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.mb-logo__mark{
+  width:38px;height:38px;border-radius:11px;background:var(--mb-ink);
+  display:grid;place-items:center;box-shadow:0 6px 14px rgba(27,31,59,.22);
+}
+.mb-logo__text{display:flex;flex-direction:column;line-height:1.1}
+.mb-logo__name{font-weight:800;font-size:1.02rem;letter-spacing:-.01em}
+.mb-logo__sub{font-size:.64rem;letter-spacing:.2em;color:var(--mb-ink-mute);font-weight:600}
+.mb-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.mb-nav__link{
+  padding:8px 12px;border-radius:9px;font-size:.9rem;font-weight:600;
+  color:var(--mb-ink-soft);transition:background .16s,color .16s;
+}
+.mb-nav__link:hover{background:var(--mb-amber-tint);color:#a85c00}
+.mb-head__tools{display:flex;align-items:center;gap:8px}
+.mb-search{
+  position:relative;display:flex;align-items:center;
+  background:#fff;border:1px solid var(--mb-line);border-radius:999px;
+  padding:4px 4px 4px 14px;transition:border-color .18s,box-shadow .18s;
+}
+.mb-search:focus-within{border-color:var(--mb-amber-deep);box-shadow:0 0 0 4px rgba(255,183,3,.18)}
+.mb-search__input{
+  width:150px;border:none;outline:none;background:transparent;
+  font-size:.86rem;color:var(--mb-ink);padding:4px 0;
+}
+.mb-search__input::placeholder{color:#a3a8c0}
+.mb-search__btn{
+  width:30px;height:30px;border-radius:50%;background:var(--mb-ink);color:#fff;
+  display:grid;place-items:center;flex:0 0 auto;
+}
+.mb-search__hint{
+  position:absolute;top:calc(100% + 8px);left:0;right:0;min-width:250px;
+  background:#fff;border:1px solid var(--mb-line);border-radius:12px;
+  box-shadow:var(--mb-shadow);padding:8px;display:none;z-index:40;
+}
+.mb-search__hint.is-open{display:block}
+.mb-search__hint li{
+  padding:7px 10px;border-radius:8px;font-size:.84rem;color:var(--mb-ink-soft);cursor:pointer;
+}
+.mb-search__hint li:hover{background:var(--mb-amber-tint);color:#a85c00}
+.mb-navtoggle{display:none;width:38px;height:38px;border-radius:10px;border:1px solid var(--mb-line);background:#fff}
+.mb-navtoggle span{display:block;width:17px;height:2px;background:var(--mb-ink);margin:3px auto;border-radius:2px;transition:transform .2s,opacity .2s}
+.mb-navtoggle.is-open span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+.mb-navtoggle.is-open span:nth-child(2){opacity:0}
+.mb-navtoggle.is-open span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+/* ---------- 首屏 6:4 大幅图文 ---------- */
+.mb-hero{
+  padding:52px 0 40px;
+  background:
+    radial-gradient(900px 380px at 88% -10%,rgba(255,183,3,.22),transparent 68%),
+    radial-gradient(720px 340px at 0% 18%,rgba(17,138,178,.10),transparent 70%),
+    var(--mb-ivory);
+  border-bottom:1px solid var(--mb-line-soft);
+}
+.mb-hero__grid{display:grid;grid-template-columns:1.5fr 1fr;gap:44px;align-items:center;min-width:0}
+.mb-hero__badge{
+  display:inline-flex;align-items:center;gap:8px;padding:5px 12px 5px 6px;
+  background:#fff;border:1px solid var(--mb-line);border-radius:999px;
+  font-size:.78rem;font-weight:700;color:var(--mb-ink-soft);margin-bottom:18px;
+}
+.mb-hero__badge i{
+  width:22px;height:22px;border-radius:50%;background:var(--mb-ink);
+  display:grid;place-items:center;font-style:normal;font-size:.68rem;color:var(--mb-amber);
+}
+.mb-hero h1{
+  font-size:clamp(2.3rem,5.4vw,3.7rem);line-height:1.04;letter-spacing:-.03em;
+  font-weight:800;margin-bottom:6px;
+}
+.mb-hero h1 em{font-style:normal;color:var(--mb-rose)}
+.mb-hero__tagline{
+  font-size:clamp(1rem,1.7vw,1.2rem);font-weight:700;color:var(--mb-ink-soft);
+  margin-bottom:16px;letter-spacing:.01em;
+}
+.mb-hero__desc{color:var(--mb-ink-mute);font-size:.98rem;max-width:54ch}
+.mb-hero__actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.mb-hero__stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+  margin-top:30px;padding-top:22px;border-top:1px dashed var(--mb-line);
+}
+.mb-stat__num{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.mb-stat__num small{font-size:.76rem;font-weight:700;color:var(--mb-amber-deep);margin-left:2px}
+.mb-stat__label{font-size:.76rem;color:var(--mb-ink-mute);margin-top:2px}
+.mb-hero__visual{position:relative;min-width:0}
+.mb-hero__frame{
+  position:relative;border-radius:24px;overflow:hidden;
+  box-shadow:0 26px 60px rgba(27,31,59,.22);
+  aspect-ratio:4/3.4;background:var(--mb-ink);
+}
+.mb-hero__frame svg{width:100%;height:100%}
+.mb-hero__play{
+  position:absolute;left:18px;bottom:18px;display:flex;align-items:center;gap:10px;
+  background:rgba(20,23,48,.72);color:#fff;padding:8px 16px 8px 8px;border-radius:999px;
+  font-size:.8rem;font-weight:600;backdrop-filter:blur(6px);
+}
+.mb-hero__play i{
+  width:30px;height:30px;border-radius:50%;background:var(--mb-amber);color:#2a1a00;
+  display:grid;place-items:center;font-style:normal;font-size:.78rem;
+}
+.mb-hero__float{
+  position:absolute;right:-10px;top:-14px;background:#fff;border-radius:14px;
+  padding:10px 14px;box-shadow:var(--mb-shadow);border:1px solid var(--mb-line);
+  font-size:.76rem;font-weight:700;color:var(--mb-ink-soft);
+}
+.mb-hero__float b{display:block;color:var(--mb-rose);font-size:1rem}
+
+/* ---------- 视频重点条目 ---------- */
+.mb-focus{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;align-items:start;margin-top:34px;min-width:0}
+.mb-focus__main{
+  background:#fff;border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  overflow:hidden;box-shadow:var(--mb-shadow);transition:transform .22s ease,box-shadow .22s ease;
+}
+.mb-focus__main:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(27,31,59,.15)}
+.mb-focus__cover{aspect-ratio:16/9;position:relative;overflow:hidden}
+.mb-focus__cover svg{width:100%;height:100%}
+.mb-focus__badge{
+  position:absolute;left:12px;top:12px;background:var(--mb-rose);color:#fff;
+  font-size:.7rem;font-weight:800;padding:4px 10px;border-radius:6px;letter-spacing:.06em;
+}
+.mb-focus__body{padding:20px 22px 22px}
+.mb-focus__title{font-size:1.26rem;line-height:1.42;font-weight:800;margin:8px 0 8px}
+.mb-focus__excerpt{color:var(--mb-ink-mute);font-size:.9rem}
+.mb-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:.78rem;color:var(--mb-ink-mute);margin-top:14px}
+.mb-meta__author{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--mb-ink-soft)}
+.mb-avatar{
+  width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+  font-size:.72rem;font-weight:800;color:#fff;flex:0 0 auto;
+}
+.mb-focus__actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.mb-act{
+  display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border-radius:999px;
+  border:1px solid var(--mb-line);font-size:.8rem;font-weight:600;color:var(--mb-ink-soft);
+  transition:background .16s,border-color .16s,color .16s,transform .16s;
+}
+.mb-act:hover{border-color:var(--mb-amber-deep);color:#a85c00;background:var(--mb-amber-tint)}
+.mb-act.is-on{border-color:var(--mb-rose);color:var(--mb-rose);background:rgba(239,71,111,.07)}
+
+.mb-focus__list{display:flex;flex-direction:column;gap:12px;min-width:0}
+.mb-focus__item{
+  display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;
+  background:#fff;border:1px solid var(--mb-line);border-radius:14px;padding:14px 16px;
+  transition:border-color .18s,transform .18s,box-shadow .18s;
+}
+.mb-focus__item:hover{border-color:var(--mb-amber);transform:translateX(3px);box-shadow:0 8px 22px rgba(27,31,59,.07)}
+.mb-focus__no{
+  font-size:1.2rem;font-weight:800;color:var(--mb-amber-deep);line-height:1;
+  font-variant-numeric:tabular-nums;padding-top:3px;
+}
+.mb-focus__ititle{font-weight:700;font-size:.96rem;line-height:1.45}
+.mb-focus__idesc{font-size:.82rem;color:var(--mb-ink-mute);margin:4px 0 8px}
+.mb-focus__itags{display:flex;gap:6px;flex-wrap:wrap}
+
+/* ---------- 视频流 三列 ---------- */
+.mb-vgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:34px}
+.mb-vcard{
+  background:#fff;border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s;
+}
+.mb-vcard:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(27,31,59,.14);border-color:rgba(255,183,3,.6)}
+.mb-vcard__cover{aspect-ratio:16/9;position:relative;overflow:hidden}
+.mb-vcard__cover svg{width:100%;height:100%}
+.mb-vcard__dur{
+  position:absolute;right:10px;bottom:10px;background:rgba(20,23,48,.78);color:#fff;
+  font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:5px;font-variant-numeric:tabular-nums;
+}
+.mb-vcard__body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.mb-vcard__title{font-size:1rem;font-weight:800;line-height:1.45;margin:6px 0 6px}
+.mb-vcard__desc{font-size:.84rem;color:var(--mb-ink-mute);flex:1}
+.mb-vcard__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--mb-line)}
+.mb-vstats{display:flex;gap:10px;font-size:.74rem;color:var(--mb-ink-mute);font-variant-numeric:tabular-nums}
+.mb-vstats span{display:inline-flex;align-items:center;gap:3px}
+
+/* ---------- 关键词解析 ---------- */
+.mb-anatomy{display:grid;grid-template-columns:0.9fr 1.4fr;gap:40px;align-items:start}
+.mb-anatomy__side{
+  position:sticky;top:calc(var(--mb-sticky) + 22px);
+  background:var(--mb-ink);color:#fff;border-radius:22px;padding:28px;
+  box-shadow:0 22px 48px rgba(27,31,59,.28);
+}
+.mb-anatomy__side .mb-eyebrow{color:var(--mb-amber)}
+.mb-anatomy__side .mb-eyebrow::before{background:var(--mb-amber)}
+.mb-anatomy__side h2{font-size:1.5rem;line-height:1.32;margin:12px 0 12px;color:#fff}
+.mb-anatomy__side p{font-size:.86rem;color:rgba(255,255,255,.68)}
+.mb-anatomy__keys{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.mb-anatomy__keys span{
+  font-size:.74rem;padding:5px 11px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.86);
+}
+.mb-anatomy__body{min-width:0}
+.mb-anatomy__block{
+  background:#fff;border:1px solid var(--mb-line);border-radius:16px;
+  padding:24px 26px;margin-bottom:18px;
+}
+.mb-anatomy__block h3{
+  font-size:1.08rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:9px;
+}
+.mb-anatomy__block h3 i{
+  width:26px;height:26px;border-radius:8px;background:var(--mb-amber-tint);color:#a85c00;
+  display:grid;place-items:center;font-size:.76rem;font-style:normal;font-weight:800;flex:0 0 auto;
+}
+.mb-anatomy__block p{font-size:.93rem;color:var(--mb-ink-soft);margin-bottom:10px}
+.mb-anatomy__block p:last-child{margin-bottom:0}
+.mb-anatomy__block strong{color:var(--mb-ink);font-weight:700}
+
+/* ---------- 专题 ---------- */
+.mb-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:34px}
+.mb-topic{
+  background:#fff;border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  padding:24px 26px;display:flex;flex-direction:column;
+  transition:box-shadow .22s,border-color .22s;
+}
+.mb-topic--wide{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.1fr;gap:26px;align-items:center}
+.mb-topic:hover{box-shadow:0 16px 38px rgba(27,31,59,.1);border-color:rgba(255,183,3,.55)}
+.mb-topic__state{
+  display:inline-flex;align-items:center;gap:7px;font-size:.74rem;font-weight:700;
+  color:var(--mb-cyan);margin-bottom:8px;
+}
+.mb-topic__state::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mb-cyan);box-shadow:0 0 0 3px rgba(17,138,178,.16)}
+.mb-topic__title{font-size:1.18rem;font-weight:800;line-height:1.4}
+.mb-topic__desc{font-size:.87rem;color:var(--mb-ink-mute);margin:8px 0 14px}
+.mb-topic__items{display:flex;flex-direction:column;gap:9px;margin-top:auto}
+.mb-topic__items li{
+  display:flex;gap:10px;font-size:.86rem;color:var(--mb-ink-soft);
+  padding-bottom:9px;border-bottom:1px dashed var(--mb-line-soft);
+}
+.mb-topic__items li:last-child{border-bottom:none;padding-bottom:0}
+.mb-topic__items b{color:var(--mb-amber-deep);font-weight:800;font-variant-numeric:tabular-nums;flex:0 0 auto}
+.mb-topic__pic{border-radius:14px;overflow:hidden;box-shadow:0 14px 30px rgba(27,31,59,.14)}
+.mb-topic__pic svg{width:100%;height:auto;display:block}
+
+/* ---------- 作者 双列简介 ---------- */
+.mb-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:34px}
+.mb-author{
+  display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+  background:#fff;border:1px solid var(--mb-line);border-radius:var(--mb-radius);
+  padding:22px 24px;transition:transform .2s,box-shadow .2s;
+}
+.mb-author:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(27,31,59,.1)}
+.mb-author__ava{
+  width:64px;height:64px;border-radius:18px;display:grid;place-items:center;
+  font-size:1.32rem;font-weight:800;color:#fff;flex:0 0 auto;
+  box-shadow:0 8px 18px rgba(27,31,59,.18);
+}
+.mb-author__name{font-size:1.04rem;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mb-author__field{font-size:.76rem;font-weight:700;color:var(--mb-amber-deep);margin:2px 0 8px}
+.mb-author__bio{font-size:.85rem;color:var(--mb-ink-mute)}
+.mb-author__nums{display:flex;gap:16px;margin-top:10px;font-size:.76rem;color:var(--mb-ink-soft);font-weight:700}
+.mb-author__nums b{font-variant-numeric:tabular-nums;color:var(--mb-ink);font-size:.9rem;margin-right:3px}
+.mb-author__btns{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+
+/* ---------- 评论 双列短评 ---------- */
+.mb-reviews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:34px}
+.mb-review{
+  background:#fff;border:1px solid var(--mb-line);border-radius:16px;padding:20px 22px;
+  display:flex;flex-direction:column;gap:10px;transition:border-color .18s;
+}
+.mb-review:hover{border-color:rgba(255,183,3,.6)}
+.mb-review--quote{
+  grid-column:1/-1;background:var(--mb-ink);color:#fff;border-color:transparent;
+  padding:30px 34px;position:relative;
+}
+.mb-review--quote blockquote{font-size:1.12rem;line-height:1.66;font-weight:600}
+.mb-review--quote cite{display:block;margin-top:14px;font-style:normal;font-size:.82rem;color:rgba(255,255,255,.66)}
+.mb-review__head{display:flex;align-items:center;gap:10px}
+.mb-review__who{font-size:.9rem;font-weight:800}
+.mb-review__role{font-size:.74rem;color:var(--mb-ink-mute)}
+.mb-review__text{font-size:.88rem;color:var(--mb-ink-soft)}
+.mb-review__stars{color:var(--mb-amber);font-size:.82rem;letter-spacing:2px}
+.mb-review__stars span{color:#dcd5c6}
+
+/* ---------- 榜单 ---------- */
+.mb-board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px}
+.mb-board__col{background:#fff;border:1px solid var(--mb-line);border-radius:var(--mb-radius);padding:22px 24px}
+.mb-board__head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--mb-ink)}
+.mb-board__title{font-size:1rem;font-weight:800}
+.mb-board__badge{font-size:.68rem;font-weight:800;letter-spacing:.08em;color:#fff;background:var(--mb-rose);padding:3px 8px;border-radius:5px}
+.mb-board__list{display:flex;flex-direction:column;gap:12px}
+.mb-board__row{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:.86rem}
+.mb-board__rank{
+  width:22px;height:22px;border-radius:6px;background:var(--mb-ivory-2);color:var(--mb-ink-soft);
+  display:grid;place-items:center;font-size:.72rem;font-weight:800;font-variant-numeric:tabular-nums;
+}
+.mb-board__row:nth-child(1) .mb-board__rank{background:var(--mb-amber);color:#3a2600}
+.mb-board__row:nth-child(2) .mb-board__rank{background:#ffd8a8;color:#7a4500}
+.mb-board__row:nth-child(3) .mb-board__rank{background:#ffe9c9;color:#8a5a10}
+.mb-board__name{font-weight:600;color:var(--mb-ink-soft);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mb-board__val{font-size:.76rem;font-weight:800;color:var(--mb-amber-deep);font-variant-numeric:tabular-nums}
+
+/* ---------- 动态 ---------- */
+.mb-news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px}
+.mb-news__item{
+  background:#fff;border-left:4px solid var(--mb-amber);border-radius:0 14px 14px 0;
+  padding:20px 22px;border-top:1px solid var(--mb-line);
+  border-right:1px solid var(--mb-line);border-bottom:1px solid var(--mb-line);
+}
+.mb-news__date{font-size:.74rem;font-weight:800;color:var(--mb-amber-deep);letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.mb-news__title{font-size:.98rem;font-weight:800;margin:6px 0 6px;line-height:1.45}
+.mb-news__text{font-size:.83rem;color:var(--mb-ink-mute)}
+
+/* ---------- 合作 ---------- */
+.mb-partners{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.mb-partner{
+  flex:1 1 180px;display:flex;align-items:center;gap:11px;
+  background:#fff;border:1px solid var(--mb-line);border-radius:13px;padding:14px 18px;
+  font-size:.88rem;font-weight:700;color:var(--mb-ink-soft);transition:border-color .18s,transform .18s;
+}
+.mb-partner:hover{border-color:var(--mb-amber);transform:translateY(-2px)}
+.mb-partner i{
+  width:30px;height:30px;border-radius:9px;display:grid;place-items:center;
+  font-style:normal;font-size:.76rem;font-weight:800;color:#fff;flex:0 0 auto;
+}
+
+/* ---------- FAQ ---------- */
+.mb-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 22px;margin-top:32px;align-items:start}
+.mb-faq__item{
+  background:#fff;border:1px solid var(--mb-line);border-radius:13px;overflow:hidden;
+  transition:border-color .18s;
+}
+.mb-faq__item[open]{border-color:var(--mb-amber)}
+.mb-faq__item summary{
+  padding:15px 18px;font-size:.92rem;font-weight:700;cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.mb-faq__item summary::-webkit-details-marker{display:none}
+.mb-faq__item summary::after{
+  content:"+";font-size:1.1rem;font-weight:700;color:var(--mb-amber-deep);
+  transition:transform .2s;flex:0 0 auto;
+}
+.mb-faq__item[open] summary::after{transform:rotate(45deg)}
+.mb-faq__item p{padding:0 18px 16px;font-size:.86rem;color:var(--mb-ink-mute)}
+
+/* ---------- 投稿 CTA ---------- */
+.mb-cta{
+  background:linear-gradient(120deg,#1b1f3b,#333a6d 55%,#57406e);
+  color:#fff;border-radius:26px;padding:42px 44px;margin-top:8px;
+  display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center;
+  box-shadow:0 26px 56px rgba(27,31,59,.28);
+}
+.mb-cta h2{font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.32;margin-bottom:10px}
+.mb-cta p{font-size:.92rem;color:rgba(255,255,255,.72)}
+.mb-cta__actions{display:flex;flex-direction:column;gap:10px}
+.mb-cta__actions .mb-btn--ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.mb-cta__actions .mb-btn--ghost:hover{background:rgba(255,255,255,.1)}
+
+/* ---------- 页脚 ---------- */
+.mb-foot{background:#14172c;color:rgba(255,255,255,.72);padding:52px 0 26px;margin-top:70px}
+.mb-foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.mb-foot__brand{display:flex;align-items:center;gap:11px;margin-bottom:14px;color:#fff}
+.mb-foot__brand span{font-weight:800;font-size:1.06rem}
+.mb-foot p{font-size:.84rem;line-height:1.85;color:rgba(255,255,255,.6)}
+.mb-foot h3{font-size:.88rem;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:.04em}
+.mb-foot__links{display:flex;flex-direction:column;gap:8px;font-size:.84rem}
+.mb-foot__links a{color:rgba(255,255,255,.62);transition:color .16s}
+.mb-foot__links a:hover{color:var(--mb-amber)}
+.mb-foot__bottom{
+  margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.78rem;color:rgba(255,255,255,.46);
+}
+
+/* ---------- 返回顶部 ---------- */
+.mb-totop{
+  position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;
+  background:var(--mb-ink);color:var(--mb-amber);display:grid;place-items:center;
+  box-shadow:0 12px 26px rgba(27,31,59,.3);z-index:90;
+  opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .24s,transform .24s,visibility .24s;font-size:1rem;
+}
+.mb-totop.is-show{opacity:1;visibility:visible;transform:translateY(0)}
+.mb-totop:hover{background:var(--mb-amber);color:var(--mb-ink)}
+
+/* ---------- Toast & Modal ---------- */
+.mb-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:rgba(20,23,48,.94);color:#fff;font-size:.86rem;font-weight:600;
+  padding:11px 22px;border-radius:999px;z-index:200;opacity:0;visibility:hidden;
+  transition:opacity .24s,transform .24s,visibility .24s;white-space:nowrap;
+  box-shadow:0 14px 34px rgba(20,23,48,.3);
+}
+.mb-toast.is-show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.mb-modal{
+  position:fixed;inset:0;background:rgba(16,19,40,.62);backdrop-filter:blur(4px);
+  z-index:190;display:grid;place-items:center;padding:20px;
+  opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s;
+}
+.mb-modal.is-open{opacity:1;visibility:visible}
+.mb-modal__panel{
+  background:var(--mb-ivory);border-radius:22px;width:min(520px,100%);
+  max-height:82vh;overflow:auto;padding:30px 32px;position:relative;
+  box-shadow:0 34px 80px rgba(16,19,40,.4);transform:translateY(10px);
+  transition:transform .24s;
+}
+.mb-modal.is-open .mb-modal__panel{transform:translateY(0)}
+.mb-modal__close{
+  position:absolute;right:16px;top:14px;width:34px;height:34px;border-radius:50%;
+  background:rgba(27,31,59,.08);display:grid;place-items:center;font-size:1rem;color:var(--mb-ink-soft);
+}
+.mb-modal__close:hover{background:rgba(27,31,59,.16)}
+.mb-modal__title{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.mb-modal__sub{font-size:.86rem;color:var(--mb-ink-mute);margin-bottom:18px}
+.mb-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.mb-field label{font-size:.8rem;font-weight:700;color:var(--mb-ink-soft)}
+.mb-field input,.mb-field textarea{
+  border:1px solid var(--mb-line);border-radius:10px;padding:10px 13px;font-size:.88rem;
+  font-family:inherit;color:var(--mb-ink);background:#fff;outline:none;transition:border-color .18s,box-shadow .18s;
+}
+.mb-field input:focus,.mb-field textarea:focus{border-color:var(--mb-amber-deep);box-shadow:0 0 0 3px rgba(255,183,3,.18)}
+.mb-field textarea{resize:vertical;min-height:92px}
+.mb-share{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.mb-share__btn{
+  flex:1 1 120px;padding:11px;border-radius:11px;background:#fff;border:1px solid var(--mb-line);
+  font-size:.85rem;font-weight:700;color:var(--mb-ink-soft);transition:border-color .16s,color .16s,transform .16s;
+}
+.mb-share__btn:hover{border-color:var(--mb-amber-deep);color:#a85c00;transform:translateY(-2px)}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1024px){
+  .mb-hero__grid{grid-template-columns:1fr;gap:30px}
+  .mb-hero__visual{max-width:560px}
+  .mb-focus{grid-template-columns:1fr}
+  .mb-vgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mb-anatomy{grid-template-columns:1fr}
+  .mb-anatomy__side{position:static}
+  .mb-board{grid-template-columns:1fr}
+  .mb-news{grid-template-columns:1fr}
+  .mb-topic--wide{grid-template-columns:1fr}
+  .mb-cta{grid-template-columns:1fr;padding:34px 28px}
+  .mb-foot__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .mb-nav{
+    position:absolute;left:0;right:0;top:100%;
+    background:rgba(253,249,241,.98);backdrop-filter:blur(14px);
+    flex-direction:column;gap:2px;padding:12px 5vw 18px;
+    border-bottom:1px solid var(--mb-line);box-shadow:0 20px 34px rgba(27,31,59,.12);
+    display:none;
+  }
+  .mb-nav.is-open{display:flex}
+  .mb-nav__link{padding:11px 12px}
+  .mb-navtoggle{display:block;margin-left:auto}
+  .mb-head__tools{margin-left:0}
+  .mb-search__input{width:110px}
+}
+@media (max-width:720px){
+  .mb-section{padding:48px 0}
+  .mb-focus__main,.mb-vcard,.mb-topic,.mb-author,.mb-review{grid-column:auto}
+  .mb-vgrid,.mb-topics,.mb-authors,.mb-reviews,.mb-faq,.mb-partners{grid-template-columns:1fr}
+  .mb-reviews,.mb-partners{display:grid}
+  .mb-review--quote{padding:24px}
+  .mb-hero__stats{grid-template-columns:1fr 1fr;gap:16px}
+  .mb-hero__float{right:6px;top:-10px;font-size:.7rem}
+  .mb-foot__grid{grid-template-columns:1fr}
+  .mb-topbar__link{display:none}
+  .mb-search{display:none}
+  .mb-reviews{grid-template-columns:1fr}
+  .mb-authors{grid-template-columns:1fr}
+  .mb-author{grid-template-columns:auto 1fr}
+}
+@media (max-width:480px){
+  .mb-hero h1{font-size:2.05rem}
+  .mb-hero__stats{grid-template-columns:1fr}
+  .mb-modal__panel{padding:24px 20px}
+  .mb-logo__sub{display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- S1 公告条 + 页头 -->
+<div class="mb-topbar" id="mb-topbar">
+  <div class="mb-wrap mb-topbar__inner">
+    <span class="mb-topbar__label">官方发布</span>
+    <div class="mb-topbar__track">
+      <div class="mb-topbar__rail">
+        <span><b>11-20</b> 冬季创作挑战赛开放报名，最高 5 万元创作扶持金</span>
+        <span><b>11-18</b> 「画布之后」第二季正片上线，共 6 集已更新 3 集</span>
+        <span><b>11-15</b> maya board 专业版会员新增 4K 原片下载与工程文件授权</span>
+        <span><b>11-12</b> 创作者扶持计划第 9 期公示，新增 38 位创作者获得流量与设备支持</span>
+      </div>
+    </div>
+    <a class="mb-topbar__link" href="#mb-news">查看全部动态 →</a>
+  </div>
+</div>
+
+<header class="mb-head">
+  <div class="mb-wrap mb-head__inner">
+    <a class="mb-logo" href="#mb-topbar" aria-label="maya board 首页">
+      <span class="mb-logo__mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M4 19V6l5 7 3-4 3 4 5-7v13" stroke="#ffb703" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="19" cy="5" r="2.4" fill="#ef476f"/>
+        </svg>
+      </span>
+      <span class="mb-logo__text">
+        <span class="mb-logo__name">maya board</span>
+        <span class="mb-logo__sub">视觉创作视频门户</span>
+      </span>
+    </a>
+
+    <nav class="mb-nav" id="mb-nav" aria-label="主导航">
+      <a class="mb-nav__link" href="#mb-hero">首页</a>
+      <a class="mb-nav__link" href="#mb-hot">视频</a>
+      <a class="mb-nav__link" href="#mb-topics">专题</a>
+      <a class="mb-nav__link" href="#mb-authors">创作者</a>
+      <a class="mb-nav__link" href="#mb-board">榜单</a>
+      <a class="mb-nav__link" href="#mb-faq">帮助</a>
+    </nav>
+
+    <div class="mb-head__tools">
+      <div class="mb-search" id="mb-search">
+        <input class="mb-search__input" id="mb-search-input" type="search" placeholder="搜索视频 / 创作者 / 专题" aria-label="站内搜索">
+        <button class="mb-search__btn" id="mb-search-btn" aria-label="提交搜索">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/>
+          </svg>
+        </button>
+        <ul class="mb-search__hint" id="mb-search-hint" role="listbox" aria-label="搜索建议"></ul>
+      </div>
+      <button class="mb-navtoggle" id="mb-navtoggle" aria-label="展开导航菜单" aria-expanded="false" aria-controls="mb-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- S2 品牌首屏 -->
+  <section class="mb-hero" id="mb-hero">
+    <div class="mb-wrap mb-hero__grid">
+      <div class="mb-hero__content">
+        <span class="mb-hero__badge"><i>M</i> maya board 官方网站 · 持续运营中</span>
+        <h1>maya board</h1>
+        <p class="mb-hero__tagline">把创作的每一步，留在画布上</p>
+        <p class="mb-hero__desc">
+          作为面向视觉创作者的高品质视频内容平台，maya board 深耕创作垂直领域，以原创纪录片、系统教程、深度测评与真实幕后，构建一个值得信赖的内容生态。企业团队与个人创作者在这里发布官方作品、记录成长轨迹、找到同频的陪伴。
+        </p>
+        <div class="mb-hero__actions">
+          <a class="mb-btn mb-btn--solid" href="#mb-hot">开始观看</a>
+          <a class="mb-btn mb-btn--amber" href="#mb-cta">投稿我的作品</a>
+          <a class="mb-btn mb-btn--ghost" href="#mb-topics">浏览专题企划</a>
+        </div>
+        <div class="mb-hero__stats">
+          <div class="mb-stat">
+            <div class="mb-stat__num" data-mb-count="12600">12,600<small>+</small></div>
+            <div class="mb-stat__label">原创高清视频累计发布</div>
+          </div>
+          <div class="mb-stat">
+            <div class="mb-stat__num" data-mb-count="3860">3,860<small>+</small></div>
+            <div class="mb-stat__label">认证创作者与团队入驻</div>
+          </div>
+          <div class="mb-stat">
+            <div class="mb-stat__num" data-mb-count="98">98<small>%</small></div>
+            <div class="mb-stat__label">用户口碑好评率</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-hero__visual">
+        <div class="mb-hero__frame">
+          <svg viewBox="0 0 640 560" role="img" aria-label="maya board 品牌首屏主视觉：三块叠放的创作画板与暖色光晕">
+            <defs>
+              <linearGradient id="mbHeroBg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2b3160"/><stop offset="1" stop-color="#141733"/>
+              </linearGradient>
+              <linearGradient id="mbHeroBoard1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#f08a00"/>
+              </linearGradient>
+              <linearGradient id="mbHeroBoard2" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#118ab2"/><stop offset="1" stop-color="#0b5c78"/>
+              </linearGradient>
+              <radialGradient id="mbHeroGlow" cx="0.72" cy="0.2" r="0.7">
+                <stop offset="0" stop-color="#ffb703" stop-opacity="0.42"/>
+                <stop offset="1" stop-color="#ffb703" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="640" height="560" fill="url(#mbHeroBg)"/>
+            <rect width="640" height="560" fill="url(#mbHeroGlow)"/>
+            <g opacity="0.16" stroke="#ffffff" stroke-width="1">
+              <path d="M0 120H640M0 250H640M0 380H640M0 500H640"/>
+              <path d="M110 0V560M260 0V560M420 0V560M560 0V560"/>
+            </g>
+            <g transform="rotate(-8 300 300)">
+              <rect x="96" y="176" width="300" height="220" rx="18" fill="url(#mbHeroBoard2)" opacity="0.9"/>
+              <rect x="120" y="204" width="180" height="10" rx="5" fill="#ffffff" opacity="0.6"/>
+              <rect x="120" y="228" width="248" height="8" rx="4" fill="#ffffff" opacity="0.34"/>
+              <rect x="120" y="248" width="210" height="8" rx="4" fill="#ffffff" opacity="0.28"/>
+              <circle cx="330" cy="336" r="26" fill="#ffffff" opacity="0.18"/>
+            </g>
+            <g transform="rotate(6 380 300)">
+              <rect x="230" y="150" width="322" height="238" rx="20" fill="url(#mbHeroBoard1)"/>
+              <rect x="258" y="182" width="150" height="12" rx="6" fill="#3a2600" opacity="0.72"/>
+              <rect x="258" y="208" width="262" height="9" rx="4.5" fill="#3a2600" opacity="0.42"/>
+              <rect x="258" y="232" width="228" height="9" rx="4.5" fill="#3a2600" opacity="0.34"/>
+              <rect x="258" y="256" width="248" height="9" rx="4.5" fill="#3a2600" opacity="0.26"/>
+              <g transform="translate(258 296)">
+                <rect width="74" height="26" rx="13" fill="#1b1f3b"/>
+                <path d="M31 9l10 5.5-10 5.5z" fill="#ffd166"/>
+                <rect x="44" y="10" width="20" height="7" rx="3.5" fill="#ffffff" opacity="0.7"/>
+              </g>
+              <circle cx="504" cy="322" r="22" fill="#ef476f"/>
+              <path d="M497 322l5 5 9-10" stroke="#ffffff" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g transform="translate(58 420)">
+              <rect width="118" height="52" rx="14" fill="#ffffff" opacity="0.94"/>
+              <circle cx="26" cy="26" r="11" fill="#ef476f"/>
+              <rect x="46" y="17" width="54" height="7" rx="3.5" fill="#1b1f3b" opacity="0.8"/>
+              <rect x="46" y="30" width="38" height="6" rx="3" fill="#1b1f3b" opacity="0.36"/>
+            </g>
+            <g transform="translate(452 62)">
+              <rect width="126" height="60" rx="14" fill="#ffffff" opacity="0.12" stroke="#ffffff" stroke-opacity="0.28"/>
+              <text x="16" y="26" font-size="13" font-weight="700" fill="#ffd166" font-family="sans-serif">本月新增</text>
+              <text x="16" y="46" font-size="18" font-weight="800" fill="#ffffff" font-family="sans-serif">46 部原创</text>
+            </g>
+          </svg>
+          <span class="mb-hero__play"><i>▶</i> 官方品牌片 · 02:38</span>
+        </div>
+        <div class="mb-hero__float">本周高分作品<b>4.9 / 5.0</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容 + 热门视频（一幅重点大图与文字列表） -->
+  <section class="mb-section" id="mb-hot">
+    <div class="mb-wrap">
+      <span class="mb-eyebrow">Focus · 焦点推荐</span>
+      <h2 class="mb-h2">本期焦点：把一块画板做成一个品牌</h2>
+      <p class="mb-lead">maya board 每周从官方发布与创作者投稿中，挑选真正值得反复观看的精品内容。它们共同回答一个问题：创作如何在真实的限制里，长出自己的形状。</p>
+
+      <div class="mb-focus">
+        <article class="mb-focus__main">
+          <div class="mb-focus__cover">
+            <svg viewBox="0 0 800 450" role="img" aria-label="焦点视频封面：深夜工作室里亮着灯的画板与散落的色卡">
+              <defs>
+                <linearGradient id="mbFC1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1b1f3b"/><stop offset="1" stop-color="#3d2c5a"/>
+                </linearGradient>
+                <linearGradient id="mbFC2" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#f28c28"/>
+                </linearGradient>
+              </defs>
+              <rect width="800" height="450" fill="url(#mbFC1)"/>
+              <circle cx="640" cy="96" r="130" fill="#ffb703" opacity="0.14"/>
+              <g transform="translate(110 78)">
+                <rect width="330" height="240" rx="16" fill="#fdf9f1" opacity="0.96"/>
+                <rect x="24" y="30" width="150" height="14" rx="7" fill="#1b1f3b" opacity="0.82"/>
+                <rect x="24" y="60" width="270" height="9" rx="4.5" fill="#1b1f3b" opacity="0.3"/>
+                <rect x="24" y="82" width="230" height="9" rx="4.5" fill="#1b1f3b" opacity="0.24"/>
+                <g transform="translate(24 112)">
+                  <rect width="58" height="58" rx="10" fill="url(#mbFC2)"/>
+                  <rect x="70" width="58" height="58" rx="10" fill="#118ab2"/>
+                  <rect x="140" width="58" height="58" rx="10" fill="#ef476f"/>
+                </g>
+                <rect x="24" y="192" width="270" height="8" rx="4" fill="#1b1f3b" opacity="0.18"/>
+                <rect x="24" y="210" width="196" height="8" rx="4" fill="#1b1f3b" opacity="0.12"/>
+              </g>
+              <g transform="translate(480 150)">
+                <rect width="220" height="150" rx="14" fill="#ffffff" opacity="0.1" stroke="#ffffff" stroke-opacity="0.26"/>
+                <path d="M30 104V50l24 32 16-22 20 26 26-34v52" stroke="#ffd166" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="176" cy="44" r="12" fill="#ef476f"/>
+              </g>
+              <g transform="translate(112 348)">
+                <rect width="210" height="44" rx="22" fill="#ffb703"/>
+                <path d="M30 15l12 7-12 7z" fill="#3a2600"/>
+                <rect x="52" y="18" width="128" height="9" rx="4.5" fill="#3a2600" opacity="0.72"/>
+              </g>
+            </svg>
+            <span class="mb-focus__badge">官方发布 · 首播</span>
+          </div>
+          <div class="mb-focus__body">
+            <span class="mb-tag">品牌故事</span>
+            <span class="mb-tag mb-tag--cyan">创作幕后</span>
+            <h3 class="mb-focus__title">《一块画板的十年》：从出租屋草图到 12,600 部原创作品</h3>
+            <p class="mb-focus__excerpt">摄制组跟拍 18 个月，记录 maya board 从一张工作台、三台旧显示器开始的成长。片中出现 9 位早期创作者的手稿原件，以及第一版社区规则被反复修改的会议录音。这是一家视觉内容平台的自我审视，也是所有长期主义者的共同经验。</p>
+            <div class="mb-meta">
+              <span class="mb-meta__author"><span class="mb-avatar" style="background:#1b1f3b">官</span> maya board 官方</span>
+              <span>播放 128.6 万</span><span>点赞 4.2 万</span><span>收藏 1.8 万</span>
+              <span>更新于 2026-11-18</span>
+            </div>
+            <div class="mb-focus__actions">
+              <button class="mb-act" data-mb-like data-count="42000" data-kind="video">♡ 点赞 <b>4.2万</b></button>
+              <button class="mb-act" data-mb-fav data-kind="video">☆ 收藏</button>
+              <button class="mb-act" data-mb-share>↗ 分享</button>
+              <button class="mb-act" data-mb-report>! 反馈</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="mb-focus__list">
+          <article class="mb-focus__item">
+            <span class="mb-focus__no">01</span>
+            <div>
+              <h3 class="mb-focus__ititle">用 6 个图层讲完一个镜头：maya board 时间轴工作法</h3>
+              <p class="mb-focus__idesc">把复杂剪辑拆成可复用的六层结构，适合教程类与产品类视频，附带可直接下载的工程模板。</p>
+              <div class="mb-focus__itags"><span class="mb-tag">教程干货</span><span class="mb-tag mb-tag--ink">剪辑思路</span><span class="mb-tag mb-tag--cyan">官方模板</span></div>
+            </div>
+          </article>
+          <article class="mb-focus__item">
+            <span class="mb-focus__no">02</span>
+            <div>
+              <h3 class="mb-focus__ititle">一块画板的三次改版：从 720p 到 4K 原片的十年工程</h3>
+              <p class="mb-focus__idesc">产品团队首次公开编码方案选型过程，包含带宽成本、色彩空间与老设备兼容的真实取舍。</p>
+              <div class="mb-focus__itags"><span class="mb-tag mb-tag--rose">深度测评</span><span class="mb-tag">科技前沿</span></div>
+            </div>
+          </article>
+          <article class="mb-focus__item">
+            <span class="mb-focus__no">03</span>
+            <div>
+              <h3 class="mb-focus__ititle">深夜的色卡：三位插画师的日更记录</h3>
+              <p class="mb-focus__idesc">跟拍 21 天，看他们如何在工作、家庭与画笔之间挤出时间，以及那些被删掉的分镜。</p>
+              <div class="mb-focus__itags"><span class="mb-tag">日常记录</span><span class="mb-tag mb-tag--ink">人物访谈</span></div>
+            </div>
+          </article>
+          <article class="mb-focus__item">
+            <span class="mb-focus__no">04</span>
+            <div>
+              <h3 class="mb-focus__ititle">社区共创第 9 期：一张画布上的 320 个签名</h3>
+              <p class="mb-focus__idesc">来自 27 个城市的创作者在同一张画布上接力创作，完整过程以长镜头呈现。</p>
+              <div class="mb-focus__itags"><span class="mb-tag mb-tag--cyan">社区共创</span><span class="mb-tag">品牌故事</span></div>
+            </div>
+          </article>
+          <article class="mb-focus__item">
+            <span class="mb-focus__no">05</span>
+            <div>
+              <h3 class="mb-focus__ititle">预算 800 元拍出高级感：小团队灯光布置全拆解</h3>
+              <p class="mb-focus__idesc">不租影棚、不用昂贵灯具，用三盏入门灯和两块反光板完成四种典型布光。</p>
+              <div class="mb-focus__itags"><span class="mb-tag mb-tag--rose">实用技巧</span><span class="mb-tag mb-tag--ink">创作幕后</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 三列视频流 -->
+      <div class="mb-vgrid" style="margin-top:52px">
+        <article class="mb-vcard">
+          <div class="mb-vcard__cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="热门视频封面：分屏色彩对比赛与调色面板">
+              <rect width="640" height="360" fill="#152238"/>
+              <rect x="0" y="0" width="320" height="360" fill="#0f3d56"/>
+              <rect x="320" y="0" width="320" height="360" fill="#ffb703" opacity="0.86"/>
+              <circle cx="200" cy="180" r="86" fill="#ffffff" opacity="0.16"/>
+              <circle cx="440" cy="180" r="86" fill="#1b1f3b" opacity="0.2"/>
+              <path d="M320 0v360" stroke="#ffffff" stroke-width="4"/>
+              <g transform="translate(272 164)"><circle cx="0" cy="0" r="18" fill="#ffffff"/><path d="M-6 -8l14 8-14 8z" fill="#1b1f3b"/></g>
+            </svg>
+            <span class="mb-vcard__dur">18:26</span>
+          </div>
+          <div class="mb-vcard__body">
+            <span class="mb-tag mb-tag--rose">深度测评</span>
+            <h3 class="mb-vcard__title">六款调色方案横向实测：哪种最适合你的创作项目</h3>
+            <p class="mb-vcard__desc">同一组素材、同一台设备，逐一对比色彩还原、噪点控制与导出效率，附完整参数表。</p>
+            <div class="mb-vcard__foot">
+              <span class="mb-meta__author"><span class="mb-avatar" style="background:#ef476f">林</span> 林知远</span>
+              <span class="mb-vstats"><span>▶ 42.1万</span><span>♡ 1.6万</span></span>
+            </div>
+            <div class="mb-focus__actions">
+              <button class="mb-act mb-btn--sm" data-mb-like data-count="16000" data-kind="video">♡ 点赞</button>
+              <button class="mb-act mb-btn--sm" data-mb-fav data-kind="video">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-vcard">
+          <div class="mb-vcard__cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="热门视频封面：城市夜色里的手绘地图与行走轨迹">
+              <rect width="640" height="360" fill="#101a2c"/>
+              <g opacity="0.5" stroke="#7fb6d8" stroke-width="1">
+                <path d="M0 90h640M0 180h640M0 270h640M120 0v360M280 0v360M440 0v360"/>
+              </g>
+              <path d="M60 300C160 240 180 160 280 150s140 60 220 20 80-100 80-100" fill="none" stroke="#ffb703" stroke-width="6" stroke-linecap="round" stroke-dasharray="14 12"/>
+              <circle cx="60" cy="300" r="10" fill="#ef476f"/>
+              <circle cx="580" cy="70" r="10" fill="#ffd166"/>
+              <g transform="translate(232 128)">
+                <rect width="140" height="90" rx="12" fill="#ffffff" opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
+                <rect x="16" y="20" width="60" height="8" rx="4" fill="#ffffff" opacity="0.7"/>
+                <rect x="16" y="38" width="96" height="7" rx="3.5" fill="#ffffff" opacity="0.4"/>
+                <rect x="16" y="54" width="74" height="7" rx="3.5" fill="#ffffff" opacity="0.32"/>
+              </g>
+            </svg>
+            <span class="mb-vcard__dur">24:05</span>
+          </div>
+          <div class="mb-vcard__body">
+            <span class="mb-tag">城市探索</span>
+            <h3 class="mb-vcard__title">用一支镜头走完老街 3 公里：在地文化的影像笔记</h3>
+            <p class="mb-vcard__desc">沿着旧城巷弄记录 12 家老店，讲述招牌、光线与手艺如何组成一条街的性格。</p>
+            <div class="mb-vcard__foot">
+              <span class="mb-meta__author"><span class="mb-avatar" style="background:#118ab2">沈</span> 沈南枝</span>
+              <span class="mb-vstats"><span>▶ 36.8万</span><span>♡ 1.2万</span></span>
+            </div>
+            <div class="mb-focus__actions">
+              <button class="mb-act mb-btn--sm" data-mb-like data-count="12000" data-kind="video">♡ 点赞</button>
+              <button class="mb-act mb-btn--sm" data-mb-fav data-kind="video">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-vcard">
+          <div class="mb-vcard__cover">
+            <svg viewBox="0 0 640 360" role="img" aria-label="热门视频封面：分镜脚本手稿与时间轴刻度">
+              <rect width="640" height="360" fill="#fdf9f1"/>
+              <rect x="0" y="0" width="640" height="360" fill="#f6eee0"/>
+              <g transform="translate(48 44)">
+                <rect width="256" height="150" rx="10" fill="#ffffff" stroke="#e3d7c3"/>
+                <rect x="18" y="20" width="90" height="9" rx="4.5" fill="#1b1f3b" opacity="0.7"/>
+                <rect x="18" y="40" width="214" height="7" rx="3.5" fill="#1b1f3b" opacity="0.28"/>
+                <rect x="18" y="56" width="186" height="7" rx="3.5" fill="#1b1f3b" opacity="0.22"/>
+                <rect x="18" y="80" width="70" height="46" rx="6" fill="#ffd166"/>
+                <rect x="98" y="80" width="70" height="46" rx="6" fill="#ef476f" opacity="0.8"/>
+                <rect x="178" y="80" width="54" height="46" rx="6" fill="#118ab2" opacity="0.8"/>
+              </g>
+              <g transform="translate(330 60)">
+                <rect width="262" height="120" rx="10" fill="#ffffff" stroke="#e3d7c3"/>
+                <path d="M22 90V40M22 40h220" stroke="#1b1f3b" stroke-width="3" stroke-linecap="round"/>
+                <path d="M50 90V60M90 90V50M130 90V72M170 90V46M210 90V64" stroke="#f08a00" stroke-width="6" stroke-linecap="round"/>
+              </g>
+              <g transform="translate(48 220)">
+                <rect width="380" height="86" rx="12" fill="#1b1f3b"/>
+                <rect x="20" y="24" width="120" height="10" rx="5" fill="#ffd166"/>
+                <rect x="20" y="46" width="230" height="8" rx="4" fill="#ffffff" opacity="0.4"/>
+                <rect x="20" y="62" width="170" height="8" rx="4" fill="#ffffff" opacity="0.24"/>
+              </g>
+              <g transform="translate(456 214)">
+                <circle cx="56" cy="56" r="56" fill="#ffb703"/>
+                <path d="M40 40l26 16-26 16z" fill="#3a2600"/>
+              </g>
+            </svg>
+            <span class="mb-vcard__dur">12:47</span>
+          </div>
+          <div class="mb-vcard__body">
+            <span class="mb-tag mb-tag--cyan">创作幕后</span>
+            <h3 class="mb-vcard__title">从一句灵感到一个系列：脚本到成片的完整链路</h3>
+            <p class="mb-vcard__desc">把选题、脚本、分镜、拍摄、剪辑、上线拆成 7 个可复制步骤，附自查清单与常见坑。</p>
+            <div class="mb-vcard__foot">
+              <span class="mb-meta__author"><span class="mb-avatar" style="background:#f08a00">周</span> 周听澜</span>
+              <span class="mb-vstats"><span>▶ 29.6万</span><span>♡ 9,800</span></span>
+            </div>
+            <div class="mb-focus__actions">
+              <button class="mb-act mb-btn--sm" data-mb-like data-count="9800" data-kind="video">♡ 点赞</button>
+              <button class="mb-act mb-btn--sm" data-mb-fav data-kind="video">☆ 收藏</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- M15 关键词深度解析 -->
+  <section class="mb-section mb-section--tint" id="mb-anatomy">
+    <div class="mb-wrap mb-anatomy">
+      <aside class="mb-anatomy__side">
+        <span class="mb-eyebrow">Brand Insight</span>
+        <h2>maya board 是什么，为什么值得长期关注</h2>
+        <p>四个维度拆解一个视觉创作平台的内核：内容、社区、技术与理念。这也是我们持续运营的底层逻辑。</p>
+        <div class="mb-anatomy__keys">
+          <span>原创</span><span>正版</span><span>高清</span><span>专业</span><span>社区</span><span>创作者</span><span>内容生态</span><span>品质</span><span>口碑</span><span>匠心</span>
+        </div>
+      </aside>
+
+      <div class="mb-anatomy__body">
+        <div class="mb-anatomy__block">
+          <h3><i>01</i> 从名字开始：一块可以反复擦写的画板</h3>
+          <p>maya board 的名字来自创始团队的一件旧物——一块用了很多年的白色画板。它被反复擦写、校正、推翻，最后留下最深的那几道笔迹。品牌把这块画板理解为创作的隐喻：<strong>真正的好内容不是一次成型的，而是在不断修正中变得清楚</strong>。因此，maya board 从第一天起就不是一个只做播放的站点，而是把「过程」本身当成内容资产来经营。</p>
+          <p>这意味着平台在功能设计上更偏向工作流：视频可以附带工程文件、色卡与分镜表；创作者可以发布「未完成版本」，邀请社区成员在评论中提供修正建议；企业团队可以把内部培训片设为私域可见，同时把品牌公开片同步到公共频道。对于视觉类创作者而言，<strong>maya board 是一个既展示成品、也展示方法与痕迹的官方网站</strong>，这种透明度本身构成了口碑的基础。</p>
+          <p>在内容品质上，平台坚持原创与正版两条底线。所有官方发布内容均标注授权范围，商用素材提供可追溯的授权编号；社区投稿进入公开推荐位前，需要通过原创性核验与画面质量抽检。这些机制并不显眼，却决定了用户是否愿意长期信任一个平台。我们相信，<strong>品质不是宣传语，而是每一条规则被坚持的结果</strong>。</p>
+        </div>
+        <div class="mb-anatomy__block">
+          <h3><i>02</i> 内容生态：教程、测评、幕后与故事的四条主线</h3>
+          <p>maya board 的内容结构可以概括为四条主线。第一条是<strong>教程干货</strong>：从基础操作到进阶工作流，强调可复用、可跟做，配套模板与素材包，让学习者能在看完一集后立刻动手。第二条是<strong>深度测评</strong>：设备、软件、色彩方案、存储方案的横向对比，所有结论都附带测试条件与原始数据，避免空洞的「好用」结论。</p>
+          <p>第三条是<strong>创作幕后</strong>：分镜怎么画、灯光怎么摆、预算怎么分配、项目如何延期又如何补救。这类内容往往播放量不如娱乐向视频，但用户留存与收藏率最高，因为它解决的是真实问题。第四条是<strong>人物与品牌故事</strong>：创作者的成长轨迹、团队的分歧与和解、一个系列从零到一的过程。四条主线互相供给，教程带来新用户，故事留下老用户，测评建立专业信任，幕后沉淀社区情感。</p>
+          <p>为了让内容生态保持活力，平台设置了季度主题企划与创作挑战。每一期挑战给出一个具体命题，例如「用一块画板讲完一个故事」或「在 60 秒内完成情绪转折」，创作者按命题投稿，社区投票与专业评审各占一半权重。这种方式让关键词自然生长出无数具体作品，而不是停留在口号层面。过去一年，<strong>共有 3,860 位创作者通过挑战赛首次获得官方推荐位</strong>，其中 112 位后来成为签约创作者。</p>
+          <p>内容生态的健康还依赖分层。我们把内容分为官方发布、签约创作者、认证创作者与普通投稿四个层级，不同层级对应不同的审核强度与流量扶持，但评价标准统一：原创性、信息密度、画面完成度与观众反馈。任何一条视频都可以被社区举报，举报结果在 48 小时内公示。透明带来信任，<strong>这也是 maya board 能够持续运营、成为用户首选视觉内容平台之一的原因</strong>。</p>
+        </div>
+        <div class="mb-anatomy__block">
+          <h3><i>03</i> 技术底座：让高清与流畅同时成立</h3>
+          <p>视觉内容平台最容易忽视的是播放体验。maya board 自建转码与分发链路，对上传视频做多码率自适应处理，同时保留 4K 原片通道供专业会员下载。为了降低创作者的等待感，上传完成后平均 11 分钟即可完成首轮转码，长视频采用分段处理，先出低码率预览，再逐步替换为高清版本。这套方案在带宽成本与观看体验之间取得了平衡，也让<strong>高清不再是少数人的特权</strong>。</p>
+          <p>在工程层面，平台对色彩管理做了额外投入：支持常见色域标记识别，导出时提示色偏风险，并提供校准参考图。对于教程类内容，时间轴支持章节标记与关键帧截图，观众可以直接跳到某个步骤；对于测评类内容，数据图表可以作为可交互图层叠加在画面上。这些细节并不炫技，但它们让「专业」变得可以被感知。技术团队每两周发布一次更新日志，公开修复项与已知问题，<strong>把持续运营写进产品节奏里</strong>。</p>
+        </div>
+        <div class="mb-anatomy__block">
+          <h3><i>04</i> 社区与理念：真实、陪伴与长期主义</h3>
+          <p>maya board 的社区文化可以浓缩成三个词：真实、陪伴、成长。真实意味着允许不完美——未完成的草稿、失败的实验、被推翻的方案都可以发布，只要注明状态；陪伴意味着评论区不以「捧场」为唯一目的，而是鼓励具体建议与经验交换，平台对高质量的批评同样给予推荐权重；成长意味着我们更关心一个创作者三个月后的进步，而不是单条视频的爆发。</p>
+          <p>为此，平台设有新人扶持通道、创作者互助小组与月度线下放映会。新人发布的前三条视频会获得额外曝光与编辑点评；互助小组按领域分组，每周固定时间做作品互评；线下放映会选择在真实空间里播放社区作品，让屏幕之外的交流发生。这些举措不追求短期数据，但它们构成了<strong>一个内容社区最难得的东西——留下来的理由</strong>。我们始终相信，创新与匠心并不矛盾，多元与包容也不冲突，一个好的视频品牌官网应当同时展示野心与温度。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="mb-section" id="mb-topics">
+    <div class="mb-wrap">
+      <span class="mb-eyebrow">Series · 专题企划</span>
+      <h2 class="mb-h2">正在更新的专题：四组长期企划</h2>
+      <p class="mb-lead">专题是 maya board 的内容骨架。每一组企划都有明确的命题、固定的更新节奏与可追溯的创作过程，欢迎订阅追更。</p>
+
+      <div class="mb-topics">
+        <article class="mb-topic mb-topic--wide">
+          <div>
+            <span class="mb-topic__state">更新中 · 已更新 3 / 6 集</span>
+            <h3 class="mb-topic__title">画布之后 · 第二季：创作过程的六个真实切面</h3>
+            <p class="mb-topic__desc">六位不同领域的创作者，六段没有剧本的跟拍。我们不拍成功学，只拍那些卡住的夜晚、被删掉的分镜和突然想通的瞬间。</p>
+            <ul class="mb-topic__items">
+              <li><b>EP01</b> 插画师的第 41 版草稿：为什么最后选了最不被看好的那一张</li>
+              <li><b>EP02</b> 一个三人团队的预算会议：如何把 1.2 万元花在刀刃上</li>
+              <li><b>EP03</b> 剪辑台上的取舍：被删掉的三分钟到底去哪了</li>
+            </ul>
+          </div>
+          <div class="mb-topic__pic">
+            <svg viewBox="0 0 520 340" role="img" aria-label="专题企划配图：六个画框排列的创作切面拼贴">
+              <rect width="520" height="340" fill="#1b1f3b"/>
+              <g>
+                <rect x="28" y="30" width="150" height="110" rx="8" fill="#ffd166"/>
+                <rect x="194" y="30" width="150" height="110" rx="8" fill="#118ab2"/>
+                <rect x="360" y="30" width="132" height="110" rx="8" fill="#ef476f" opacity="0.9"/>
+                <rect x="28" y="156" width="150" height="110" rx="8" fill="#f6eee0"/>
+                <rect x="194" y="156" width="150" height="110" rx="8" fill="#3a3f63"/>
+                <rect x="360" y="156" width="132" height="110" rx="8" fill="#ffb703" opacity="0.8"/>
+              </g>
+              <g stroke="#ffffff" stroke-opacity="0.55" stroke-width="2" fill="none">
+                <path d="M44 66h96M44 84h72M44 102h110"/>
+                <path d="M210 62h94M210 80h110M210 98h66"/>
+                <circle cx="426" cy="85" r="24"/>
+              </g>
+              <g fill="#1b1f3b" opacity="0.7">
+                <rect x="46" y="182" width="86" height="8" rx="4"/>
+                <rect x="46" y="200" width="110" height="7" rx="3.5"/>
+                <rect x="210" y="182" width="100" height="8" rx="4"/>
+              </g>
+              <rect x="28" y="292" width="464" height="22" rx="11" fill="#ffffff" opacity="0.14"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="mb-topic">
+          <span class="mb-topic__state">更新中 · 每周三</span>
+          <h3 class="mb-topic__title">十分钟工作流：可复用的剪辑与调色模板</h3>
+          <p class="mb-topic__desc">把专业流程压缩成十分钟能讲完的模块，每期解决一个具体问题，配套工程文件免费下载。</p>
+          <ul class="mb-topic__items">
+            <li><b>01</b> 三轨并行的剪辑结构：让修改成本下降一半</li>
+            <li><b>02</b> 肤色保护的四个节点：不靠滤镜也能自然</li>
+            <li><b>03</b> 字幕的呼吸感：字号、行距与出场节奏</li>
+          </ul>
+        </article>
+
+        <article class="mb-topic">
+          <span class="mb-topic__state">已完结 · 全 8 集</span>
+          <h3 class="mb-topic__title">小设备大画面：轻量拍摄实验</h3>
+          <p class="mb-topic__desc">用手机、卡片机与入门微单完成八种题材拍摄，重点不在设备参数，而在光线、构图与叙事选择。</p>
+          <ul class="mb-topic__items">
+            <li><b>01</b> 一扇窗就是最好的柔光箱</li>
+            <li><b>02</b> 手持运镜的稳定边界在哪里</li>
+            <li><b>03</b> 低照度下的取舍：噪点还是拖影</li>
+          </ul>
+        </article>
+
+        <article class="mb-topic">
+          <span class="mb-topic__state">征稿中 · 截止 12-20</span>
+          <h3 class="mb-topic__title">冬季创作挑战赛：给一块画板写一封情书</h3>
+          <p class="mb-topic__desc">不限器材与时长，用影像表达你与创作工具之间的关系。设最佳作品、最佳新人、社区票选三个奖项。</p>
+          <ul class="mb-topic__items">
+            <li><b>奖项</b> 最高 5 万元创作扶持金与官方推荐位</li>
+            <li><b>评审</b> 专业评审占 50%，社区投票占 50%</li>
+            <li><b>报名</b> 站内投稿入口提交作品与创作说明</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵（双列简介） -->
+  <section class="mb-section mb-section--tint" id="mb-authors">
+    <div class="mb-wrap">
+      <span class="mb-eyebrow">Creators · 创作者</span>
+      <h2 class="mb-h2">社区里的六位长期创作者</h2>
+      <p class="mb-lead">他们来自不同领域，共同点是持续更新、愿意分享过程。maya board 的品牌影响力，很大一部分由这些具体的人构成。</p>
+
+      <div class="mb-authors">
+        <article class="mb-author">
+          <div class="mb-author__ava" style="background:linear-gradient(135deg,#ef476f,#f08a00)" aria-hidden="true">林</div>
+          <div>
+            <h3 class="mb-author__name">林知远 <span class="mb-tag mb-tag--ink">签约创作者</span></h3>
+            <p class="mb-author__field">深度测评 · 色彩管理</p>
+            <p class="mb-author__bio">前影像设备评测编辑，现独立创作者。擅长把复杂的色彩与编码问题讲成可操作的步骤，视频里常出现手绘数据图。坚持所有测评自购设备，不接受品牌送测，评论区的问题基本都会回复。</p>
+            <div class="mb-author__nums"><span><b>186</b>作品</span><span><b>24.3万</b>粉丝</span><span><b>98%</b>好评</span></div>
+            <div class="mb-author__btns">
+              <button class="mb-act mb-btn--sm" data-mb-author="林知远">作者资料</button>
+              <button class="mb-act mb-btn--sm" data-mb-share>分享主页</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-author">
+          <div class="mb-author__ava" style="background:linear-gradient(135deg,#118ab2,#0b5c78)" aria-hidden="true">沈</div>
+          <div>
+            <h3 class="mb-author__name">沈南枝 <span class="mb-tag mb-tag--cyan">认证创作者</span></h3>
+            <p class="mb-author__field">城市探索 · 在地文化</p>
+            <p class="mb-author__bio">纪录片编导出身，习惯一个人一台机器走街串巷。作品多围绕老街、手艺人与城市变迁，镜头耐心、旁白克制。她认为拍城市最重要的是先学会在街角站够二十分钟，再看清什么值得被记录。</p>
+            <div class="mb-author__nums"><span><b>94</b>作品</span><span><b>17.6万</b>粉丝</span><span><b>97%</b>好评</span></div>
+            <div class="mb-author__btns">
+              <button class="mb-act mb-btn--sm" data-mb-author="沈南枝">作者资料</button>
+              <button class="mb-act mb-btn--sm" data-mb-share>分享主页</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-author">
+          <div class="mb-author__ava" style="background:linear-gradient(135deg,#f08a00,#ffd166)" aria-hidden="true">周</div>
+          <div>
+            <h3 class="mb-author__name">周听澜 <span class="mb-tag">教程主理人</span></h3>
+            <p class="mb-author__field">剪辑工作流 · 脚本方法</p>
+            <p class="mb-author__bio">在广告公司做了七年剪辑，转向内容创作后专注「可复用的方法」。每期教程都提供模板与检查清单，被不少团队当作新人培训材料。他的观点是：灵感靠积累，成品靠流程，流程才是普通人的护城河。</p>
+            <div class="mb-author__nums"><span><b>142</b>作品</span><span><b>31.2万</b>粉丝</span><span><b>99%</b>好评</span></div>
+            <div class="mb-author__btns">
+              <button class="mb-act mb-btn--sm" data-mb-author="周听澜">作者资料</button>
+              <button class="mb-act mb-btn--sm" data-mb-share>分享主页</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-author">
+          <div class="mb-author__ava" style="background:linear-gradient(135deg,#57406e,#ef476f)" aria-hidden="true">许</div>
+          <div>
+            <h3 class="mb-author__name">许微光 <span class="mb-tag mb-tag--rose">幕后记录</span></h3>
+            <p class="mb-author__field">创作幕后 · 人物访谈</p>
+            <p class="mb-author__bio">擅长把镜头对准镜头背后的人。她的访谈很少问「成功秘诀」，更常问「那天你几点睡的」。作品节奏慢，但信息密度高，常被观众称为「看完想立刻打开工程文件」的那类视频。</p>
+            <div class="mb-author__nums"><span><b>68</b>作品</span><span><b>12.8万</b>粉丝</span><span><b>96%</b>好评</span></div>
+            <div class="mb-author__btns">
+              <button class="mb-act mb-btn--sm" data-mb-author="许微光">作者资料</button>
+              <button class="mb-act mb-btn--sm" data-mb-share>分享主页</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-author">
+          <div class="mb-author__ava" style="background:linear-gradient(135deg,#2d3566,#118ab2)" aria-hidden="true">程</div>
+          <div>
+            <h3 class="mb-author__name">程予安 <span class="mb-tag mb-tag--cyan">动画方向</span></h3>
+            <p class="mb-author__field">动态图形 · 视觉设计</p>
+            <p class="mb-author__bio">自由动态设计师，服务过多个品牌的视觉升级项目。频道内容以拆解为主，从一张静态海报讲到完整动效的推导过程，强调结构而非炫技。常说自己最满意的作品永远在下一个项目里。</p>
+            <div class="mb-author__nums"><span><b>112</b>作品</span><span><b>19.5万</b>粉丝</span><span><b>98%</b>好评</span></div>
+            <div class="mb-author__btns">
+              <button class="mb-act mb-btn--sm" data-mb-author="程予安">作者资料</button>
+              <button class="mb-act mb-btn--sm" data-mb-share>分享主页</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="mb-author">
+          <div class="mb-author__ava" style="background:linear-gradient(135deg,#0b5c78,#3a3f63)" aria-hidden="true">叶</div>
+          <div>
+            <h3 class="mb-author__name">叶拾秋 <span class="mb-tag mb-tag--ink">新人推荐</span></h3>
+            <p class="mb-author__field">日常记录 · 治愈影像</p>
+            <p class="mb-author__bio">入驻未满一年的新人创作者，用一台旧相机记录小城四季。视频不长，多是几分钟的生活切片，却常有观众留言说看完安静下来。她的目标是先拍满一百条，再考虑要不要删掉前五十条。</p>
+            <div class="mb-author__nums"><span><b>37</b>作品</span><span><b>4.6万</b>粉丝</span><span><b>95%</b>好评</span></div>
+            <div class="mb-author__btns">
+              <button class="mb-act mb-btn--sm" data-mb-author="叶拾秋">作者资料</button>
+              <button class="mb-act mb-btn--sm" data-mb-share>分享主页</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 榜单 + 评论 -->
+  <section class="mb-section" id="mb-board">
+    <div class="mb-wrap">
+      <span class="mb-eyebrow">Charts · 榜单</span>
+      <h2 class="mb-h2">本周数据榜单：热度、新人、口碑</h2>
+      <p class="mb-lead">数据根据站内播放、完播、收藏与评论质量综合计算，每周一更新。榜单不分领域，只看内容本身。</p>
+
+      <div class="mb-board">
+        <div class="mb-board__col">
+          <div class="mb-board__head">
+            <span class="mb-board__title">热度榜</span>
+            <span class="mb-board__badge">TOP</span>
+          </div>
+          <ol class="mb-board__list">
+            <li class="mb-board__row"><span class="mb-board__rank">1</span><span class="mb-board__name">《一块画板的十年》官方纪录片</span><span class="mb-board__val">128.6万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">2</span><span class="mb-board__name">六款调色方案横向实测</span><span class="mb-board__val">42.1万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">3</span><span class="mb-board__name">用一支镜头走完老街 3 公里</span><span class="mb-board__val">36.8万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">4</span><span class="mb-board__name">从一句灵感到一个系列</span><span class="mb-board__val">29.6万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">5</span><span class="mb-board__name">预算 800 元拍出高级感</span><span class="mb-board__val">27.4万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">6</span><span class="mb-board__name">社区共创：320 个签名</span><span class="mb-board__val">23.9万</span></li>
+          </ol>
+        </div>
+        <div class="mb-board__col">
+          <div class="mb-board__head">
+            <span class="mb-board__title">新人榜</span>
+            <span class="mb-board__badge">NEW</span>
+          </div>
+          <ol class="mb-board__list">
+            <li class="mb-board__row"><span class="mb-board__rank">1</span><span class="mb-board__name">叶拾秋 · 小城四季记录</span><span class="mb-board__val">4.6万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">2</span><span class="mb-board__name">南方窗 · 手作陶艺日记</span><span class="mb-board__val">3.2万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">3</span><span class="mb-board__name">陈一帧 · 一分钟动画实验</span><span class="mb-board__val">2.8万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">4</span><span class="mb-board__name">阿满 · 旧相机重开箱</span><span class="mb-board__val">2.1万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">5</span><span class="mb-board__name">木白 · 声音采集小记</span><span class="mb-board__val">1.7万</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">6</span><span class="mb-board__name">林七 · 画板上的早餐</span><span class="mb-board__val">1.4万</span></li>
+          </ol>
+        </div>
+        <div class="mb-board__col">
+          <div class="mb-board__head">
+            <span class="mb-board__title">口碑榜</span>
+            <span class="mb-board__badge">好评</span>
+          </div>
+          <ol class="mb-board__list">
+            <li class="mb-board__row"><span class="mb-board__rank">1</span><span class="mb-board__name">十分钟工作流系列</span><span class="mb-board__val">99%</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">2</span><span class="mb-board__name">画布之后 · 第二季</span><span class="mb-board__val">98%</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">3</span><span class="mb-board__name">小设备大画面实验</span><span class="mb-board__val">98%</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">4</span><span class="mb-board__name">色彩管理系列课</span><span class="mb-board__val">97%</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">5</span><span class="mb-board__name">创作者访谈合集</span><span class="mb-board__val">97%</span></li>
+            <li class="mb-board__row"><span class="mb-board__rank">6</span><span class="mb-board__name">社区共创记录</span><span class="mb-board__val">96%</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <h2 class="mb-h2" style="margin-top:64px">来自社区的真实评价</h2>
+      <p class="mb-lead">以下内容摘自公开评论区与征集反馈，保留原样，未做修饰。它们构成 maya board 的口碑底色。</p>
+
+      <div class="mb-reviews">
+        <article class="mb-review mb-review--quote">
+          <blockquote>“我在 maya board 上看的第一支视频是《一块画板的十年》，看完直接把自己关在房间里改了三版方案。它没有告诉我怎么成功，只告诉我别人是怎么熬过来的。”</blockquote>
+          <cite>—— 社区用户 · 独立设计师 · 入驻 2 年</cite>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#ef476f">顾</span>
+            <div><div class="mb-review__who">顾时雨</div><div class="mb-review__role">广告公司剪辑</div></div>
+          </div>
+          <div class="mb-review__stars">★★★★★</div>
+          <p class="mb-review__text">十分钟工作流那期三轨结构，我们组直接拿来当标准流程了，返工率肉眼可见地下降。</p>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#118ab2">谭</span>
+            <div><div class="mb-review__who">谭一舟</div><div class="mb-review__role">企业视频负责人</div></div>
+          </div>
+          <div class="mb-review__stars">★★★★<span>★</span></div>
+          <p class="mb-review__text">上传转码速度确实快，内部培训片当天就能发给外地团队。希望后续能增加更多批量管理功能。</p>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#f08a00">苏</span>
+            <div><div class="mb-review__who">苏木</div><div class="mb-review__role">新人创作者</div></div>
+          </div>
+          <div class="mb-review__stars">★★★★★</div>
+          <p class="mb-review__text">第三条视频拿到了编辑点评，指出我前 15 秒节奏太慢，改完之后完播率翻了一倍，挺实在的。</p>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#57406e">钟</span>
+            <div><div class="mb-review__who">钟离白</div><div class="mb-review__role">摄影爱好者</div></div>
+          </div>
+          <div class="mb-review__stars">★★★★★</div>
+          <p class="mb-review__text">测评里给原始数据这点太重要了。其他平台都是结论先行，这里能看到测试条件，自己判断。</p>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#0b5c78">裴</span>
+            <div><div class="mb-review__who">裴晚</div><div class="mb-review__role">自由插画师</div></div>
+          </div>
+          <div class="mb-review__stars">★★★★<span>★</span></div>
+          <p class="mb-review__text">线下放映会去过一次，氛围很好，就是名额太少，希望能多开几场，最好也来我们这种小城市。</p>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#3a3f63">陆</span>
+            <div><div class="mb-review__who">陆见山</div><div class="mb-review__role">影视专业学生</div></div>
+          </div>
+          <div class="mb-review__stars">★★★★★</div>
+          <p class="mb-review__text">工程文件是真的能下载，不是演示版，对我们这种学生来说省了很多摸索时间，感谢。</p>
+        </article>
+        <article class="mb-review">
+          <div class="mb-review__head">
+            <span class="mb-avatar" style="background:#ffb703">温</span>
+            <div><div class="mb-review__who">温故</div><div class="mb-review__role">品牌内容策划</div></div>
+          </div>
+          <div class="mb-review__text">专题企划的命题能力很强，不是随便凑合集。我们团队每期都追，常常拿来当内部选题参考。</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 辅助区：企业动态 / 合作品牌 / FAQ -->
+  <section class="mb-section mb-section--tint" id="mb-news">
+    <div class="mb-wrap">
+      <span class="mb-eyebrow">Updates · 企业动态</span>
+      <h2 class="mb-h2">maya board 近期官方发布</h2>
+      <p class="mb-lead">产品更新、活动报名与内容计划，都在这里公开。我们坚持把版本变化写清楚，也欢迎用户提出改进意见。</p>
+
+      <div class="mb-news">
+        <article class="mb-news__item">
+          <div class="mb-news__date">2026-11-20</div>
+          <h3 class="mb-news__title">冬季创作挑战赛开放报名</h3>
+          <p class="mb-news__text">命题为「给一块画板写一封情书」，不限器材与时长。设最佳作品、最佳新人、社区票选三个奖项，最高 5 万元创作扶持金，报名截止 12 月 20 日。</p>
+        </article>
+        <article class="mb-news__item">
+          <div class="mb-news__date">2026-11-18</div>
+          <h3 class="mb-news__title">《画布之后》第二季正片上线</h3>
+          <p class="mb-news__text">共 6 集，已更新 3 集。本季延续无剧本跟拍，新增创作者互助小组的幕后片段，每周三晚 8 点更新。</p>
+        </article>
+        <article class="mb-news__item">
+          <div class="mb-news__date">2026-11-15</div>
+          <h3 class="mb-news__title">专业版会员权益更新</h3>
+          <p class="mb-news__text">新增 4K 原片下载与工程文件授权范围说明，同时下调长视频分段转码的等待时间，平均缩短约 4 分钟。</p>
+        </article>
+        <article class="mb-news__item">
+          <div class="mb-news__date">2026-11-12</div>
+          <h3 class="mb-news__title">创作者扶持计划第 9 期公示</h3>
+          <p class="mb-news__text">本期新增 38 位创作者获得流量推荐与设备支持，涵盖动画、纪实、教程等方向，名单与评审意见已公开。</p>
+        </article>
+        <article class="mb-news__item">
+          <div class="mb-news__date">2026-11-06</div>
+          <h3 class="mb-news__title">评论质量分机制上线试运行</h3>
+          <p class="mb-news__text">对提供具体建议与经验补充的评论给予更高展示权重，试运行两周，期间收到 1,240 条反馈，正式版将于 12 月上线。</p>
+        </article>
+        <article class="mb-news__item">
+          <div class="mb-news__date">2026-10-30</div>
+          <h3 class="mb-news__title">线下放映会城市站扩展</h3>
+          <p class="mb-news__text">继三座城市之后，新增两个站点，每场限 80 人，报名免费。现场将播放社区精选作品并安排创作者映后交流。</p>
+        </article>
+      </div>
+
+      <h2 class="mb-h2" style="margin-top:62px">合作品牌与伙伴</h2>
+      <p class="mb-lead">我们与设备、软件、教育与公益机构保持长期合作，共同推动视觉创作内容的品质提升。</p>
+      <div class="mb-partners">
+        <div class="mb-partner"><i style="background:#1b1f3b">光</i> 光学器材研究所</div>
+        <div class="mb-partner"><i style="background:#ef476f">帧</i> 帧率软件工作室</div>
+        <div class="mb-partner"><i style="background:#118ab2">市</i> 城市影像档案馆</div>
+        <div class="mb-partner"><i style="background:#f08a00">学</i> 视觉设计学院</div>
+        <div class="mb-partner"><i style="background:#57406e">益</i> 青年创作公益基金</div>
+        <div class="mb-partner"><i style="background:#0b5c78">云</i> 内容存储服务商</div>
+      </div>
+
+      <h2 class="mb-h2" style="margin-top:62px" id="mb-faq">常见问题</h2>
+      <p class="mb-lead">关于投稿、版权、会员与活动，这里集中回答最常被问到的问题。</p>
+
+      <div class="mb-faq">
+        <details class="mb-faq__item" open>
+          <summary>如何向 maya board 投稿作品？</summary>
+          <p>注册并通过实名认证后，在首页或「投稿入口」提交视频文件、封面与创作说明。普通投稿通常在 24 小时内完成审核，进入公开推荐位需通过原创性与画质抽检。</p>
+        </details>
+        <details class="mb-faq__item">
+          <summary>平台对原创与正版的要求具体是什么？</summary>
+          <p>视频主体需为投稿者原创或持有完整授权，使用的音乐、字体、素材需可追溯。官方发布内容均标注授权范围，商用素材提供授权编号，违规内容一经核实将下架并公示。</p>
+        </details>
+        <details class="mb-faq__item">
+          <summary>专业版会员包含哪些权益？</summary>
+          <p>包含 4K 原片下载、工程文件授权使用、去广告观看、专属客服与活动优先报名。会员权益每次调整都会在「企业动态」中提前公示。</p>
+        </details>
+        <details class="mb-faq__item">
+          <summary>创作挑战赛的评选标准是什么？</summary>
+          <p>专业评审与社区投票各占 50% 权重。专业评审关注原创性、叙事完整度与画面完成度；社区投票关注真实共鸣与讨论质量。所有获奖作品与评审意见都会公开。</p>
+        </details>
+        <details class="mb-faq__item">
+          <summary>可以在平台上发布未完成的作品吗？</summary>
+          <p>可以。平台设有「进行中」状态标记，鼓励展示草稿与实验过程。标注状态的未完成作品同样可以参与社区互评，但不进入正式榜单。</p>
+        </details>
+        <details class="mb-faq__item">
+          <summary>企业团队如何申请批量账号？</summary>
+          <p>在页脚「联系我们」提交团队信息与使用场景，运营团队会在三个工作日内回复，并提供演示与试用账号。教育与非营利机构可申请专项支持。</p>
+        </details>
+        <details class="mb-faq__item">
+          <summary>遇到内容问题如何反馈或举报？</summary>
+          <p>每条视频下方均设有反馈入口，可选择版权、内容质量、不当信息等类别。举报结果将在 48 小时内公示，处理进度可随时查询。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 投稿 CTA -->
+  <section class="mb-section" id="mb-cta">
+    <div class="mb-wrap">
+      <div class="mb-cta">
+        <div>
+          <h2>把你的创作过程，留在 maya board</h2>
+          <p>无论是一支十分钟的教程，还是一段三分钟的生活切片，只要真实、具体、有方法，我们都愿意给它一个被看见的位置。官方投稿入口长期开放，新人有专门扶持通道。</p>
+        </div>
+        <div class="mb-cta__actions">
+          <button class="mb-btn mb-btn--amber" data-mb-submit>立即投稿</button>
+          <button class="mb-btn mb-btn--ghost" data-mb-share>分享官方网站</button>
+          <button class="mb-btn mb-btn--ghost" data-mb-copy>复制页面链接</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- S8 页脚 -->
+<footer class="mb-foot">
+  <div class="mb-wrap">
+    <div class="mb-foot__grid">
+      <div>
+        <div class="mb-foot__brand">
+          <span class="mb-logo__mark" aria-hidden="true" style="width:32px;height:32px;border-radius:9px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19V6l5 7 3-4 3 4 5-7v13" stroke="#ffb703" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="19" cy="5" r="2.4" fill="#ef476f"/>
+            </svg>
+          </span>
+          <span>maya board</span>
+        </div>
+        <p>maya board 官方网站 · 视觉创作的视频内容平台。我们深耕创作垂直领域，坚持以原创与正版为底线，为创作者、企业与社区搭建高品质内容生态，持续运营，值得信赖。</p>
+        <p style="margin-top:12px">品牌口号：把创作的每一步，留在画布上。</p>
+      </div>
+      <div>
+        <h3>快速导航</h3>
+        <nav class="mb-foot__links" aria-label="页脚导航">
+          <a href="#mb-hero">品牌首页</a>
+          <a href="#mb-hot">焦点视频</a>
+          <a href="#mb-topics">专题企划</a>
+          <a href="#mb-authors">创作者</a>
+          <a href="#mb-board">数据榜单</a>
+        </nav>
+      </div>
+      <div>
+        <h3>参与社区</h3>
+        <nav class="mb-foot__links" aria-label="社区导航">
+          <a href="#mb-cta">投稿作品</a>
+          <a href="#mb-news">企业动态</a>
+          <a href="#mb-faq">常见问题</a>
+          <a href="#mb-anatomy">品牌解析</a>
+          <a href="#mb-topics">创作挑战赛</a>
+        </nav>
+      </div>
+      <div>
+        <h3>联系我们</h3>
+        <div class="mb-foot__links">
+          <a href="#mb-cta">合作与商务洽谈</a>
+          <a href="#mb-cta">媒体与内容转载</a>
+          <a href="#mb-faq">版权与举报通道</a>
+          <a href="#mb-news">创作者扶持申请</a>
+        </div>
+      </div>
+    </div>
+    <div class="mb-foot__bottom">
+      <span>© 2026 maya board 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容许可证号：MB-2026-VIS-0417 · 信息备案号：MB-BEIAN-2026-1109</span>
+    </div>
+  </div>
+</footer>
+
+<button class="mb-totop" id="mb-totop" aria-label="回到页面顶部">↑</button>
+<div class="mb-toast" id="mb-toast" role="status" aria-live="polite"></div>
+
+<!-- 通用弹窗 -->
+<div class="mb-modal" id="mb-modal" role="dialog" aria-modal="true" aria-labelledby="mb-modal-title">
+  <div class="mb-modal__panel">
+    <button class="mb-modal__close" id="mb-modal-close" aria-label="关闭弹窗">✕</button>
+    <h3 class="mb-modal__title" id="mb-modal-title">标题</h3>
+    <p class="mb-modal__sub" id="mb-modal-sub">说明</p>
+    <div id="mb-modal-body"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Toast ---------- */
+  var toastEl = document.getElementById('mb-toast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('is-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('is-show'); }, 2200);
+  }
+
+  /* ---------- 移动端导航 ---------- */
+  var nav = document.getElementById('mb-nav');
+  var navToggle = document.getElementById('mb-navtoggle');
+  navToggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    navToggle.classList.toggle('is-open', open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.closest('.mb-nav__link')){
+      nav.classList.remove('is-open');
+      navToggle.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* ---------- 搜索建议与反馈 ---------- */
+  var searchInput = document.getElementById('mb-search-input');
+  var searchBtn = document.getElementById('mb-search-btn');
+  var searchHint = document.getElementById('mb-search-hint');
+  var searchPool = [
+    '一块画板的十年 官方纪录片',
+    '十分钟工作流 三轨剪辑结构',
+    '六款调色方案横向实测',
+    '用一支镜头走完老街 3 公里',
+    '小设备大画面 轻量拍摄实验',
+    '色彩管理 从标记到导出',
+    '创作者访谈 许微光',
+    '冬季创作挑战赛 报名'
+  ];
+  function renderHint(kw){
+    var list = searchPool.filter(function(item){
+      return !kw || item.indexOf(kw) > -1;
+    }).slice(0, 5);
+    if(!kw){ list = searchPool.slice(0,4); }
+    searchHint.innerHTML = list.map(function(item){
+      return '<li role="option">' + item + '</li>';
+    }).join('');
+    searchHint.classList.add('is-open');
+  }
+  searchInput.addEventListener('focus', function(){ renderHint(searchInput.value.trim()); });
+  searchInput.addEventListener('input', function(){ renderHint(searchInput.value.trim()); });
+  searchHint.addEventListener('click', function(e){
+    var li = e.target.closest('li');
+    if(!li) return;
+    searchInput.value = li.textContent;
+    searchHint.classList.remove('is-open');
+    toast('已定位到相关视频：' + li.textContent);
+  });
+  searchBtn.addEventListener('click', function(){
+    var kw = searchInput.value.trim();
+    if(!kw){ toast('请输入关键词后搜索'); searchInput.focus(); return; }
+    var hits = searchPool.filter(function(i){ return i.indexOf(kw) > -1; });
+    toast(hits.length ? '找到 ' + hits.length + ' 条相关内容' : '暂无完全匹配，已为你推荐热门内容');
+    searchHint.classList.remove('is-open');
+    document.getElementById('mb-hot').scrollIntoView({behavior:'smooth'});
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('#mb-search')) searchHint.classList.remove('is-open');
+  });
+
+  /* ---------- 点赞 ---------- */
+  document.querySelectorAll('[data-mb-like]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var isOn = btn.classList.toggle('is-on');
+      var base = parseInt(btn.getAttribute('data-count') || '0', 10);
+      var next = isOn ? base + 1 : base;
+      btn.setAttribute('data-count', String(next));
+      var b = btn.querySelector('b');
+      var shown = next >= 10000 ? (next/10000).toFixed(1) + '万' : String(next);
+      if(b){ b.textContent = shown; }
+      else { btn.textContent = (isOn ? '♥ ' : '♡ ') + '点赞'; }
+      toast(isOn ? '已点赞，感谢支持' : '已取消点赞');
+    });
+  });
+
+  /* ---------- 收藏 ---------- */
+  document.querySelectorAll('[data-mb-fav]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var isOn = btn.classList.toggle('is-on');
+      btn.textContent = isOn ? '★ 已收藏' : '☆ 收藏';
+      toast(isOn ? '已加入收藏夹' : '已取消收藏');
+    });
+  });
+
+  /* ---------- 弹窗工具 ---------- */
+  var modal = document.getElementById('mb-modal');
+  var modalTitle = document.getElementById('mb-modal-title');
+  var modalSub = document.getElementById('mb-modal-sub');
+  var modalBody = document.getElementById('mb-modal-body');
+  function openModal(title, sub, html){
+    modalTitle.textContent = title;
+    modalSub.textContent = sub;
+    modalBody.innerHTML = html;
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('mb-modal-close').addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  /* ---------- 分享 ---------- */
+  document.querySelectorAll('[data-mb-share]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal('分享 maya board','选择一个渠道，把视觉创作内容分享给朋友',
+        '<div class="mb-share">' +
+          '<button class="mb-share__btn" data-mb-share-to="微信">微信好友</button>' +
+          '<button class="mb-share__btn" data-mb-share-to="朋友圈">朋友圈</button>' +
+          '<button class="mb-share__btn" data-mb-share-to="微博">微博</button>' +
+          '<button class="mb-share__btn" data-mb-share-to="QQ">QQ</button>' +
+        '</div>' +
+        '<p style="font-size:.8rem;color:#6a6f8f;margin-top:14px">也可使用下方的复制链接按钮，将页面链接手动粘贴到任意聊天窗口。</p>'
+      );
+    });
+  });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-mb-share-to]');
+    if(!b) return;
+    toast('已生成' + b.getAttribute('data-mb-share-to') + '分享提示');
+    closeModal();
+  });
+
+  /* ---------- 复制链接 ---------- */
+  function copyText(text){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject){
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        resolve();
+      }catch(err){ reject(err); }
+    });
+  }
+  document.querySelectorAll('[data-mb-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var link = 'https://example.invalid/maya-board';
+      copyText(link).then(function(){
+        toast('页面链接已复制');
+      }).catch(function(){
+        toast('复制失败，请手动选择链接');
+      });
+    });
+  });
+
+  /* ---------- 作者资料 ---------- */
+  var authorData = {
+    '林知远': {field:'深度测评 · 色彩管理', works:'186', fans:'24.3万', bio:'前影像设备评测编辑，现独立创作者。坚持所有测评自购设备，不接受品牌送测，评论区的问题基本都会回复。擅长把复杂的色彩与编码问题讲成可操作的步骤。', color:'#ef476f'},
+    '沈南枝': {field:'城市探索 · 在地文化', works:'94', fans:'17.6万', bio:'纪录片编导出身，习惯一个人一台机器走街串巷。作品多围绕老街、手艺人与城市变迁，镜头耐心、旁白克制。她认为拍城市最重要的是先学会在街角站够二十分钟。', color:'#118ab2'},
+    '周听澜': {field:'剪辑工作流 · 脚本方法', works:'142', fans:'31.2万', bio:'在广告公司做了七年剪辑，转向内容创作后专注可复用的方法。每期教程都提供模板与检查清单，被不少团队当作新人培训材料。他的观点是：灵感靠积累，成品靠流程。', color:'#f08a00'},
+    '许微光': {field:'创作幕后 · 人物访谈', works:'68', fans:'12.8万', bio:'擅长把镜头对准镜头背后的人。访谈很少问成功秘诀，更常问那天你几点睡的。作品节奏慢但信息密度高，常被观众称为看完想立刻打开工程文件的那类视频。', color:'#57406e'},
+    '程予安': {field:'动态图形 · 视觉设计', works:'112', fans:'19.5万', bio:'自由动态设计师，服务过多个品牌的视觉升级项目。频道内容以拆解为主，从一张静态海报讲到完整动效的推导过程，强调结构而非炫技，最满意的作品永远在下一个项目里。', color:'#2d3566'},
+    '叶拾秋': {field:'日常记录 · 治愈影像', works:'37', fans:'4.6万', bio:'入驻未满一年的新人创作者，用一台旧相机记录小城四季。视频不长，多是几分钟的生活切片，却常有观众留言说看完安静下来。她的目标是先拍满一百条，再考虑要不要删掉前五十条。', color:'#0b5c78'}
+  };
+  document.querySelectorAll('[data-mb-author]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var name = btn.getAttribute('data-mb-author');
+      var d = authorData[name];
+      if(!d) return;
+      openModal(name, d.field + ' · 认证创作者',
+        '<div style="display:flex;gap:14px;align-items:center;margin-bottom:16px">' +
+          '<span class="mb-avatar" style="width:52px;height:52px;border-radius:15px;font-size:1.1rem;background:' + d.color + '">' + name.charAt(0) + '</span>' +
+          '<div><b style="font-size:1rem">' + d.works + ' 部作品</b><br><span style="font-size:.82rem;color:#6a6f8f">' + d.fans + ' 位关注者</span></div>' +
+        '</div>' +
+        '<p style="font-size:.9rem;color:#3a3f63;line-height:1.8">' + d.bio + '</p>' +
+        '<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">' +
+          '<button class="mb-act" data-mb-fav>☆ 关注创作者</button>' +
+          '<button class="mb-act" data-mb-share>↗ 分享主页</button>' +
+        '</div>'
+      );
+      modalBody.querySelectorAll('[data-mb-fav]').forEach(function(f){
+        f.addEventListener('click', function(){
+          var on = f.classList.toggle('is-on');
+          f.textContent = on ? '★ 已关注' : '☆ 关注创作者';
+          toast(on ? '已关注 ' + name : '已取消关注');
+        });
+      });
+      modalBody.querySelectorAll('[data-mb-share]').forEach(function(s){
+        s.addEventListener('click', function(){
+          toast('已生成' + name + '的主页分享提示');
+        });
+      });
+    });
+  });
+
+  /* ---------- 投稿弹窗 ---------- */
+  var submitModalHtml =
+    '<div class="mb-field"><label for="mb-s-title">作品标题</label><input id="mb-s-title" type="text" placeholder="例如：三轨剪辑结构实战演示"></div>' +
+    '<div class="mb-field"><label for="mb-s-type">内容方向</label><input id="mb-s-type" type="text" placeholder="教程干货 / 深度测评 / 创作幕后 / 品牌故事"></div>' +
+    '<div class="mb-field"><label for="mb-s-desc">创作说明</label><textarea id="mb-s-desc" placeholder="简单介绍创作过程、使用的器材与想解决的问题（100 字以内）"></textarea></div>' +
+    '<button class="mb-btn mb-btn--solid" id="mb-submit-send" style="width:100%;margin-top:4px">提交审核</button>';
+  document.querySelectorAll('[data-mb-submit]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal('投稿到 maya board','官方投稿入口长期开放，新人有专门扶持通道', submitModalHtml);
+      var send = document.getElementById('mb-submit-send');
+      send.addEventListener('click', function(){
+        var t = document.getElementById('mb-s-title').value.trim();
+        var ty = document.getElementById('mb-s-type').value.trim();
+        if(!t || !ty){ toast('请填写作品标题与内容方向'); return; }
+        toast('投稿已提交，审核结果将站内通知');
+        closeModal();
+      });
+    });
+  });
+
+  /* ---------- 反馈弹窗 ---------- */
+  document.querySelectorAll('[data-mb-report]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal('内容反馈','你的反馈会帮助我们一起维护社区品质',
+        '<div class="mb-field"><label for="mb-r-type">反馈类型</label><input id="mb-r-type" type="text" placeholder="版权问题 / 内容质量 / 不当信息 / 功能建议"></div>' +
+        '<div class="mb-field"><label for="mb-r-desc">详细说明</label><textarea id="mb-r-desc" placeholder="请描述具体问题，便于我们快速定位"></textarea></div>' +
+        '<button class="mb-btn mb-btn--solid" id="mb-report-send" style="width:100%">提交反馈</button>'
+      );
+      document.getElementById('mb-report-send').addEventListener('click', function(){
+        var ty = document.getElementById('mb-r-type').value.trim();
+        if(!ty){ toast('请填写反馈类型'); return; }
+        toast('反馈已收到，将在 48 小时内处理');
+        closeModal();
+      });
+    });
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var toTop = document.getElementById('mb-totop');
+  window.addEventListener('scroll', function(){
+    toTop.classList.toggle('is-show', window.scrollY > 520);
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counters = document.querySelectorAll('[data-mb-count]');
+  if('IntersectionObserver' in window){
+    var done = new Set();
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting || done.has(en.target)) return;
+        done.add(en.target);
+        var el = en.target;
+        var target = parseInt(el.getAttribute('data-mb-count'), 10);
+        var suffix = el.querySelector('small');
+        var suffixHtml = suffix ? suffix.outerHTML : '';
+        var start = Math.max(0, Math.floor(target * 0.86));
+        var cur = start;
+        var step = Math.max(1, Math.round((target - start) / 26));
+        var t = setInterval(function(){
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(t); }
+          el.innerHTML = cur.toLocaleString('en-US') + suffixHtml;
+        }, 28);
+      });
+    }, {threshold:.5});
+    counters.forEach(function(c){ io.observe(c); });
+  }
+
+  /* ---------- 平滑锚点偏移修正 ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id === '#' || id.length < 2) return;
+      var target = document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      var sticky = document.getElementById('mb-topbar').offsetHeight + document.querySelector('.mb-head').offsetHeight;
+      var top = target.getBoundingClientRect().top + window.scrollY - sticky - 12;
+      window.scrollTo({top: Math.max(0, top), behavior:'smooth'});
+    });
+  });
+
+})();
+</script>
+</body>
+  </html>
